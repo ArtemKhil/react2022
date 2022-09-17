@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    background: gold;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: gold;
+}
+
+.user_btn {
+    border-radius: 10px;
+    background: darkturquoise;
+
+}
