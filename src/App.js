@@ -1,5 +1,6 @@
 import './App.css';
-import {Users} from "./components";
+import {Users,Posts} from "./components";
+
 
 
 
@@ -11,6 +12,7 @@ function App() {
         <div>
 
             <Users/>
+            <Posts/>
 
         </div>
     );

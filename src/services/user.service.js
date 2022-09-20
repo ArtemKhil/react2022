@@ -4,7 +4,8 @@ import {urls} from "../configs";
 
 const userService = {
 
-    getAll: axiosService.get(urls.users)
+    getAll: axiosService.get(urls.users),
+    getUserById: (id) => axiosService.get(`urls.users/${id}`)
 };
 
 export {userService};

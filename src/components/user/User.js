@@ -1,19 +1,20 @@
 import React from 'react';
 
-function User(props) {
-    let {user} = props;
 
+
+function User(props) {
+
+    let {user:{id,name}} = props;
 
     return (
         <>
-         <div>
-             <h2>{user.id}.{user.name}</h2>
+         <div className={'wrap'}>
 
-             <button>Posts</button>
+             <h2>{id}.{name}</h2>
+
+             <button onClick={()=>{}}>Posts</button>
 
          </div>
-
-
         </>
     );
 }
