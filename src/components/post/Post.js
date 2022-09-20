@@ -7,8 +7,7 @@ function Post(props) {
     return (
         <div>
 
-            <h3>{post.title}</h3>
-            <h4>{post.body}</h4>
+            <h4 className={'posts'}>{post.title}</h4>
 
         </div>
     );

@@ -1,8 +1,5 @@
 import './App.css';
-import {Users,Posts} from "./components";
-
-
-
+import {Users} from "./components";
 
 
 function App() {
@@ -12,7 +9,6 @@ function App() {
         <div>
 
             <Users/>
-            <Posts/>
 
         </div>
     );
