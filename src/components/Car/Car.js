@@ -3,7 +3,7 @@ import React from 'react';
 import css from './Car.module.css'
 import {carService} from "../../services";
 
-function Car({car, setCars}) {
+function Car({car, setCars, setCarForUpdate}) {
 
     let {id, model, price, year} = car;
 
@@ -25,7 +25,7 @@ function Car({car, setCars}) {
                 <div>year:{year}</div>
             </div>
             <div className={css.tools}>
-                <button>Update</button>
+                <button onClick={() => setCarForUpdate(car)}>Update</button>
                 <button onClick={() => deleteCar()}>Delete</button>
             </div>
         </div>
