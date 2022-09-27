@@ -1,0 +1,10 @@
+.comment{
+    background:khaki;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post {
+    margin-left: 20px;
+    font-weight: bold;
+}
