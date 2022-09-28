@@ -7,3 +7,4 @@ export * from './comment/Comment';
 export * from './posts/Posts';
 export * from './post/Post';
 export * from './post.details/PostDetails';
+export * from './posts.details/PostsDetails';

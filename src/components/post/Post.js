@@ -8,7 +8,11 @@ function Post({post}) {
 
     return (
         <div className={css.Post}>
-            <Link to={`${post.id}/comments`}><h3>{post.id}.{post.title}</h3></Link>
+
+            <h3>{post.id}.{post.title}</h3>
+
+            <span><Link to={post.id.toString()}>Get comments</Link></span>
+
         </div>
     );
 }

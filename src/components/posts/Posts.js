@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {Outlet} from "react-router-dom";
 
 import {postService} from "../../services";
 import {Post} from "../post/Post";
@@ -16,8 +15,6 @@ function Posts() {
     return (
 
         <div>
-
-            <Outlet/>
 
             {
                 posts.map((post,index)=><Post key={index} post={post}/>)

@@ -1,37 +1,28 @@
-import {Routes, Route, Link} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
-import {Albums, Comments, PostDetails, Posts, Todos} from "./components";
+import {PostsDetails} from "./components";
+import {MainLayout} from "./layout/MainLayout";
+import {AlbumPage, CommentPage, PostPage, TodoPage} from "./pages";
 
 
 function App() {
 
-
     return (
 
         <div>
-            <ul>
-                <li><Link to={'/todos'}>All Todos</Link></li>
-                <li><Link to={'/albums'}>All Albums</Link></li>
-                <li><Link to={'/comments'}>All Comments</Link></li>
-                <li><Link to={'/posts'}>All Posts</Link></li>
-            </ul>
-
-            <hr/>
 
             <Routes>
+                <Route path={'/'} element={<MainLayout/>}>
+                    <Route path={'/todos'} element={<TodoPage/>}/>
+                    <Route path={'/albums'} element={<AlbumPage/>}/>
+                    <Route path={'/posts'} element={<PostPage/>}>
 
-                <Route path={'/todos'} element={<Todos/>}/>
-                <Route path={'/albums'} element={<Albums/>}/>
-                <Route path={'/comments'} element={<Comments/>}/>
+                        <Route path={':id/comments'} element={<PostsDetails/>}/>
 
-                <Route path={'/posts'} element={<Posts/>}>
-
-                    <Route path={':id/comments'} element={<PostDetails/>}/>
-
+                    </Route>
+                    <Route path={'/comments'} element={<CommentPage/>}/>
                 </Route>
-
             </Routes>
-
 
         </div>
     );

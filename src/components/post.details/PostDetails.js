@@ -1,23 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
-import {postService} from "../../services";
-
-function PostDetails() {
-
-    const {id} = useParams();
-    const [postDetails,setPostDetails] = useState([]);
+import React from 'react';
 
 
-    useEffect((id) => {
-        postService.getPostComments(id).then(({data})=>setPostDetails(data))
-    }, [id]);
+function PostDetails({postDetails}) {
 
 
     return (
         <div>
-            {
-                JSON.stringify(postDetails)
-            }
+            <h3>{postDetails.id}</h3>
         </div>
     );
 }
