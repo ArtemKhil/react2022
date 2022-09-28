@@ -16,9 +16,7 @@ function App() {
                     <Route path={'/todos'} element={<TodoPage/>}/>
                     <Route path={'/albums'} element={<AlbumPage/>}/>
                     <Route path={'/posts'} element={<PostPage/>}>
-
-                        <Route path={':id/comments'} element={<PostsDetails/>}/>
-
+                        <Route path={':comments'} element={<PostsDetails/>}/>
                     </Route>
                     <Route path={'/comments'} element={<CommentPage/>}/>
                 </Route>

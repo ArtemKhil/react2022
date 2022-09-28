@@ -1,3 +1,5 @@
 .Comment{
     background:darkturquoise;
+    display: flex;
+    justify-content: center;
 }

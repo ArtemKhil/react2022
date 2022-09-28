@@ -1,5 +1,5 @@
-.Todo{
-    background: khaki;
+.comment{
     display: flex;
     justify-content: center;
+    background: aqua;
 }

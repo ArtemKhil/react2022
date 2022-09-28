@@ -6,24 +6,23 @@ import {PostDetails} from "../post.details/PostDetails";
 
 function PostsDetails() {
 
-    const {id} = useParams();
-    const [postDetails,setPostDetails] = useState(null);
+    const {comments} = useParams();
+    const [postsDetails, setPostsDetails] = useState([]);
 
 
     useEffect(() => {
-        postService.getPostComments(id).then(({data})=>setPostDetails(data))
-    }, [id]);
+        postService.getPostComments(comments).then(({data}) => setPostsDetails(data))
+    }, [comments]);
 
 
     return (
         <div>
             {
-                postDetails &&(<PostDetails postdetails={postDetails} key={postDetails.id}/>)
-
+                postsDetails.map((postDetails, index) => <PostDetails postDetails={postDetails} key={index}/>)
             }
 
         </div>
     );
 }
 
-export{PostsDetails};
+export {PostsDetails};

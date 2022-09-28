@@ -11,7 +11,6 @@ function MainLayout() {
         <div>
 
             <Headers/>
-            <hr/>
             <Outlet/>
 
         </div>

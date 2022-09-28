@@ -1,11 +1,11 @@
-.Post{
-    background: gold;
+.menu{
     display: flex;
     justify-content: center;
 }
-.span{
+
+.link {
     display: flex;
-    justify-content: center;
-    background: gold;
+    justify-content: space-evenly;
+    font-size: large;
     font-weight: bold;
 }
