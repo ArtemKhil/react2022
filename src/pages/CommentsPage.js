@@ -1,16 +1,15 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
 
-import {Users} from "../components";
+import {Comments} from "../components";
 
-
-function UsersPage() {
+function CommentsPage() {
     return (
         <div>
             <Outlet/>
-            <Users/>
+            <Comments/>
         </div>
     );
 }
 
-export {UsersPage};
+export {CommentsPage};

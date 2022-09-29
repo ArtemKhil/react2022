@@ -1,8 +1,11 @@
 import React from 'react';
 
-function Todo() {
+function Todo({todo}) {
     return (
-        <div></div>
+
+        <div>
+            <h3>{todo.id}.{todo.title}</h3>
+        </div>
     );
 }
 

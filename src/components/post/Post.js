@@ -1,8 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-function Post() {
+function Post({post}) {
     return (
-        <div></div>
+        <div>
+            <h3>{post.id}.{post.title}</h3>
+            <span><Link to={post.id.toString()}>Get details</Link></span>
+        </div>
     );
 }
 

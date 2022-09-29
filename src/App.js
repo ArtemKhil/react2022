@@ -1,7 +1,9 @@
 import {Routes, Route} from "react-router-dom";
 
 import {MainLayout} from "./layout/MainLayout";
-import {Posts, Todos, Users, UsersDetails} from "./components";
+import {CommentsDetails, PostsDetails, UsersDetails} from "./components";
+import {CommentsPage, PostsPage, TodosPage, UsersPage} from "./pages";
+
 
 
 function App() {
@@ -9,15 +11,18 @@ function App() {
         <div>
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
-                    <Route path={'users'} element={<Users/>}>
-                        <Route path={'users/:id'} element={<UsersDetails/>}/>
+                    <Route path={'users'} element={<UsersPage/>}>
+                        <Route path={':id'} element={<UsersDetails/>}/>
                     </Route>
-                    <Route path={'todos'} element={<Todos/>}/>
-                    <Route path={'posts'} element={<Posts/>}/>
+                    <Route path={'todos'} element={<TodosPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}>
+                        <Route path={':comments'} element={<PostsDetails/>}/>
+                    </Route>
+                    <Route path={'comments'} element={<CommentsPage/>}>
+                        <Route path={':postId'} element={<CommentsDetails/>}/>
+                    </Route>
                 </Route>
             </Routes>
-
-
 
 
         </div>
