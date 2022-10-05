@@ -1,0 +1,21 @@
+.Header {
+    height: 50px;
+    background: gold;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.header_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_buttons button {
+    margin: 5px;
+    border-radius: 5px;
+
+
+}
+
