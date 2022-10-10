@@ -1,0 +1,24 @@
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main {
+    background: aqua;
+    margin-top: -20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.buttons button {
+    border-radius: 10px;
+    background: khaki;
+    margin-bottom: 10px;
+}
