@@ -1,0 +1,20 @@
+.container{
+    background: khaki;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container button{
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    background: gold;
+    color: purple;
+}
+
+.container h4{
+    margin-top: -10px;
+    color: purple;
+}
