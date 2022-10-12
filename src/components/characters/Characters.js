@@ -40,8 +40,8 @@ function Characters() {
             }
 
             <div className={css.buttons}>
-                <button disabled={!prev} onClick={prevPage}>Previous Page</button>
-                <button disabled={!next} onClick={nextPage}>Next Page</button>
+                <button disabled={prev} onClick={prevPage}>Previous Page</button>
+                <button disabled={next} onClick={nextPage}>Next Page</button>
             </div>
 
         </div>

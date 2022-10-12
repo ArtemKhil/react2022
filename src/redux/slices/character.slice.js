@@ -7,8 +7,9 @@ const initialState = {
     characters: [],
     loading: false,
     error: null,
-    next: null,
-    prev: null
+    prev: null,
+    next: null
+
 };
 
 

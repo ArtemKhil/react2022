@@ -3,7 +3,7 @@ import {characterReducer} from "./slices";
 
 
 const rootReducer = combineReducers({
-    characterReducer
+   characterReducer
 
 });
 
