@@ -34,8 +34,8 @@ const characterSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 state.characters = action.payload.results;
-                state.prev = action.payload.prev;
-                state.next = action.payload.next;
+                state.prev = action.payload.info.prev;
+                state.next = action.payload.info.next;
                 state.loading = false;
 
             })
