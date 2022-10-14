@@ -23,6 +23,18 @@ const getAll = createAsyncThunk(
     }
 );
 
+const deleteById = createAsyncThunk(
+    'postSlice/deleteById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            await postsService.deleteById(id);
+            return id;
+        } catch (e) {
+            return rejectWithValue(e.response.data);
+        }
+    }
+);
+
 const getCommentsByPostId = createAsyncThunk(
     'postSlice/getCommentsByPostId',
     async ({id}, {rejectWithValue}) => {
@@ -39,12 +51,7 @@ const getCommentsByPostId = createAsyncThunk(
 const postSlice = createSlice({
     name: 'postSlice',
     initialState,
-    reducers: {
-        deleteById: (state, action) => {
-            const index = state.posts.findIndex(post => post.id === action.payload);
-            state.posts.splice(index, 1);
-        }
-    },
+    reducers: {},
 
     extraReducers: builder =>
         builder
@@ -59,13 +66,30 @@ const postSlice = createSlice({
                 state.error = action.payload;
                 state.loading = false;
             })
+
             .addCase(getCommentsByPostId.fulfilled, (state, action) => {
                 state.getCommentsByPostId = action.payload;
+            })
+            .addCase(getCommentsByPostId.pending, (state, action) => {
+                state.loading = false;
+            })
+            .addCase(getCommentsByPostId.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
+            })
+
+            .addCase(deleteById.fulfilled, (state, action) => {
+                const findIndex = state.posts.findIndex(value => value.id === action.payload);
+                state.posts.splice(findIndex, 1);
+            })
+            .addCase(deleteById.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
             })
 });
 
 
-const {reducer: postReducer, actions: {deleteById}} = postSlice;
+const {reducer: postReducer, actions: {}} = postSlice;
 
 const postActions = {
     getAll,

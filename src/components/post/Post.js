@@ -19,7 +19,7 @@ function Post({post}) {
 
             <div className={css.buttons}>
                 <button onClick={()=>{dispatch(postActions.getCommentsByPostId({id}))}}>Get comments</button>
-                <button onClick={()=>{dispatch(postActions.deleteById(id))}}>Delete Post</button>
+                <button onClick={()=>{dispatch(postActions.deleteById({id}))}}>Delete Post</button>
             </div>
 
 

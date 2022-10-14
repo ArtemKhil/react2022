@@ -21,7 +21,7 @@ function User({user}) {
             <div className={css.buttons}>
                 <button onClick={() => dispatch(userActions.setCurrentUser(user))}>Get User</button>
                 <button onClick={() => dispatch(userActions.getById({id}))}>Get asyncUser</button>
-                <button onClick={() => dispatch(userActions.deleteById(id))}>Delete User</button>
+                <button onClick={() => dispatch(userActions.deleteById({id}))}>Delete User</button>
             </div>
 
 

@@ -24,6 +24,18 @@ const getAll = createAsyncThunk(
     }
 );
 
+const deleteById = createAsyncThunk(
+    'userSlice/deleteById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            await usersService.deleteById(id);
+            return id;
+        } catch (e) {
+            return rejectWithValue(e.response.data);
+        }
+    }
+);
+
 const getById = createAsyncThunk(
     'userSlice/getById',
     async ({id}, {rejectWithValue}) => {
@@ -43,34 +55,46 @@ const userSlice = createSlice({
     reducers: {
         setCurrentUser: (state, action) => {
             state.currentUser = action.payload
-        },
-        deleteById: (state, action) => {
-            const index = state.users.findIndex(user => user.id === action.payload);
-            state.users.splice(index, 1);
         }
     },
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                state.users = action.payload
-                state.loading = false
+                state.users = action.payload;
+                state.loading = false;
             })
-
-            .addCase(getAll.rejected, (state, action) => {
-                state.error = action.payload
-                state.loading = false
-            })
-
             .addCase(getAll.pending, (state, action) => {
-                state.loading = true
+                state.loading = true;
             })
+            .addCase(getAll.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
+            })
+
 
             .addCase(getById.fulfilled, (state, action) => {
-                state.getAsyncUser = action.payload
+                state.getAsyncUser = action.payload;
+                state.loading = false;
+            })
+            .addCase(getById.pending, (state, action) => {
+                state.loading = true;
+            })
+            .addCase(getById.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
+            })
+
+            .addCase(deleteById.fulfilled, (state, action) => {
+                const userIndex = state.users.findIndex(value => value.id === action.payload);
+                state.users.splice(userIndex, 1);
+            })
+            .addCase(deleteById.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
             })
 });
 
-const {reducer: userReducer, actions: {setCurrentUser, deleteById}} = userSlice;
+const {reducer: userReducer, actions: {setCurrentUser}} = userSlice;
 
 const userActions = {
     getAll,
