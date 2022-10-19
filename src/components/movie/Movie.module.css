@@ -1,0 +1,25 @@
+.movie_container {
+    background: khaki;
+    margin-top: -22px;
+
+}
+
+.movie_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie_wrap button {
+    margin-top: 10px;
+    background: gold;
+    border-radius: 10px;
+    color: purple;
+    font-weight: bold;
+}
+
+.movie_wrap img {
+    border: 2px solid black;
+}
+
