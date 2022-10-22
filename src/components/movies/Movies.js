@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
@@ -9,11 +9,12 @@ import css from './Movies.module.css';
 
 function Movies() {
 
-    const {movies, movieDetails, prev, next} = useSelector(state => state.movieReducer);
+    const {movies, movieDetails} = useSelector(state => state.movieReducer);
 
     const dispatch = useDispatch();
 
     const [query, setQuery] = useSearchParams({page: '1'});
+
 
     useEffect(() => {
         dispatch(movieActions.getAll({page: query.get('page')}));
@@ -46,8 +47,8 @@ function Movies() {
                 movies.map(movie => <Movie key={movie.id} movie={movie}/>)
             }
             <div className={css.button}>
-                <button onClick={prevPage}>Previous Page</button>
-                <button onClick={nextPage}>Next Page</button>
+                <button disabled={query.get('page') === '1'} onClick={prevPage}>Previous Page</button>
+                <button disabled={query.get('page') === '500'} onClick={nextPage}>Next Page</button>
             </div>
         </div>
     );

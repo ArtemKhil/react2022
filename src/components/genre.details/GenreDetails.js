@@ -40,7 +40,7 @@ function GenreDetails() {
             }
 
             <div className={css.button}>
-                <button onClick={prevPage}>Previous Page</button>
+                <button disabled={query.get('page')==='1'} onClick={prevPage}>Previous Page</button>
                 <button onClick={nextPage}>Next Page</button>
             </div>
 

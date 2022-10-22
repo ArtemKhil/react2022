@@ -1,5 +1,5 @@
 .container {
-    background: darkkhaki;
+    background: khaki;
 
 }
 
@@ -8,4 +8,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.wrap h3{
+    margin-top: -10px;
+    color: purple;
 }

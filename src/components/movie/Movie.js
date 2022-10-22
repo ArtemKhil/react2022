@@ -20,6 +20,7 @@ function Movie({movie}) {
                 <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt="movie poster"/>
                 <button onClick={() => dispatch(movieActions.getById({id}))}>More Details</button>
             </div>
+
         </div>
     );
 }

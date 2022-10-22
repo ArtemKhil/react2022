@@ -7,10 +7,7 @@ const initialState = {
     movies: [],
     errors: null,
     loading: false,
-    movieDetails: null,
-    prev: null,
-    next: null,
-
+    movieDetails: null
 };
 
 const getAll = createAsyncThunk(
@@ -37,9 +34,6 @@ const getById = createAsyncThunk(
     }
 );
 
-// state.prev = action.payload.prev; undefined
-// state.next = action.payload.next; undefined
-
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
@@ -48,9 +42,6 @@ const movieSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
-                state.prev = action.payload.prev;
-                state.next = action.payload.next;
-
                 state.error = null;
                 state.loading = false;
             })
