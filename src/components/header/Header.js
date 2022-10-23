@@ -11,6 +11,7 @@ function Header() {
 
         <div className={css.menu}>
             <div><Link to={'movies'}>Discover Movies</Link></div>
+            <div><Link to={'search'}>Search Movies</Link></div>
             <div><Link to={'genres'}>Discover Genres</Link></div>
         </div>
     );

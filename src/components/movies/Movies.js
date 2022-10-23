@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
 import {movieActions} from "../../redux";
 import {Movie} from "../movie/Movie";
 import css from './Movies.module.css';
+
 
 
 function Movies() {
