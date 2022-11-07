@@ -5,6 +5,7 @@ import {moviesService} from "../../services";
 
 const initialState = {
     movies: [],
+    movie: null,
     errors: null,
     loading: false,
     movieDetails: null,

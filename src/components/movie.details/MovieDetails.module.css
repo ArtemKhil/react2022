@@ -1,0 +1,50 @@
+.movie_single_card {
+    max-width: 1080px;
+    display: flex;
+    margin: 20px auto;
+    text-align: center;
+    /*background: gold;*/
+    box-shadow: rgba(118, 124, 130, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+}
+
+.movie_single_card img {
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+}
+
+.single_movie_overview {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie_overview img {
+    border-radius: 10px;
+}
+
+.movie_overview {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie_overview p {
+    font-size: 22px;
+}
+
+.movie_overview button {
+    width: 200px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    background-color: gold;
+    color: purple;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+}
+
+.movie_overview button:hover {
+    cursor: pointer;
+}

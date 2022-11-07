@@ -7,3 +7,4 @@ export * from './genre.details/GenreDetails';
 export * from './genre.detail/GenreDetail';
 export * from './searchbar.form/SearchbarForm';
 export * from './movie.title.search/movieTitleSearch';
+export * from './movie.details/MovieDetails';
